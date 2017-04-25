@@ -26,7 +26,7 @@ requirements:
     - appdirs
     - mapkit
     - psycopg2
-    - pynio          # [not win]
+    - pynio          # [not win not py3k]
     - pyyaml
     - rapidpy
     - timezonefinder
