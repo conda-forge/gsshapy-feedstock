@@ -1,6 +1,6 @@
 {% set name = "gsshapy" %}
-{% set version = "2.1.1" %}
-{% set sha256 = "d7ad06b3e780b33e187b4fa2ab506eb153775a06b4a0d45594621b469a277264" %}
+{% set version = "2.2.2" %}
+{% set sha256 = "4433a08ff42923b8ed578296db5fb4cb6934485d0d7be015c99e55df74ee7d01" %}
 
 package:
   name: {{ name|lower }}
@@ -22,11 +22,16 @@ requirements:
     - setuptools
   run:
     - python
+    - affine
+    - appdirs
     - mapkit
     - psycopg2
-    - pygrib          # [not win]
+    - pynio          # [not win]
+    - pyyaml
     - rapidpy
     - timezonefinder
+    - utm
+    - wrf-python
 
 test:
   imports:
@@ -36,20 +41,25 @@ test:
     - gsshapy.orm.prj
     - gsshapy.lib
     - gsshapy.lib.db_tools
-    - gridtogssha
-    - gridtogssha.framework
-    - gridtogssha.hrrr_to_gssha
-    - gridtogssha.lsm_to_gssha
+    - gsshapy.lib.grid_tools
+    - gsshapy.grid
+    - gsshapy.grid.grid_to_gssha
+    - gsshapy.grid.hrrr_to_gssha
+    - gsshapy.modeling
+    - gsshapy.modeling.event
+    - gsshapy.modeling.framework
+    - gsshapy.modeling.model
 
 about:
   home: http://github.com/ci-water/gsshapy
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Object Relational Model for GSSHA model files.'
+  summary: 'Object Relational Model for GSSHA model files and a toolkit to convert gridded input into GSSHA input.'
   description: |
     GsshaPy is an object relational model (ORM) for the
-    Gridded Surface Subsurface Hydrologic Analysis (GSSHA) model.
+    Gridded Surface Subsurface Hydrologic Analysis (GSSHA) model
+    and a toolkit to convert gridded input into GSSHA input.
     The purpose of GsshaPy is to expose GSSHA files to a web
     development environment by reading them into an SQL database.
     The files can also be written back to file for model execution.
