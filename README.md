@@ -7,10 +7,11 @@ Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: Object Relational Model for GSSHA model files.
+Summary: Object Relational Model for GSSHA model files and a toolkit to convert gridded input into GSSHA input.
 
 GsshaPy is an object relational model (ORM) for the
-Gridded Surface Subsurface Hydrologic Analysis (GSSHA) model.
+Gridded Surface Subsurface Hydrologic Analysis (GSSHA) model
+and a toolkit to convert gridded input into GSSHA input.
 The purpose of GsshaPy is to expose GSSHA files to a web
 development environment by reading them into an SQL database.
 The files can also be written back to file for model execution.
