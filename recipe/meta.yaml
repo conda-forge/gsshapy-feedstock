@@ -1,6 +1,6 @@
 {% set name = "gsshapy" %}
-{% set version = "2.2.2" %}
-{% set sha256 = "4433a08ff42923b8ed578296db5fb4cb6934485d0d7be015c99e55df74ee7d01" %}
+{% set version = "2.2.3" %}
+{% set sha256 = "7a30caf6fdb90a79cf8a9892ea6e8e89e9f929c06d7d7df18160db7db914694f" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   skip: True          # [py36 or (win and py3k)]
   script: python setup.py install --single-version-externally-managed --record record.txt
 
