@@ -1,6 +1,6 @@
 {% set name = "gsshapy" %}
-{% set version = "2.2.3" %}
-{% set sha256 = "7a30caf6fdb90a79cf8a9892ea6e8e89e9f929c06d7d7df18160db7db914694f" %}
+{% set version = "2.3.0" %}
+{% set sha256 = "2412eb048c793bf100ec9722b3415f34b4ac9f6634f132651ff3dec073809e41" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: True          # [py36 or (win and py3k)]
+  skip: True          # [win and py3k]
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -25,6 +25,7 @@ requirements:
     - affine
     - appdirs
     - mapkit
+    - pangaea
     - psycopg2
     - pynio          # [not win and not py3k]
     - pyyaml
@@ -41,10 +42,11 @@ test:
     - gsshapy.orm.prj
     - gsshapy.lib
     - gsshapy.lib.db_tools
-    - gsshapy.lib.grid_tools
     - gsshapy.grid
     - gsshapy.grid.grid_to_gssha
     - gsshapy.grid.hrrr_to_gssha
+    - gsshapy.grid.era_to_gssha
+    - gsshapy.grid.nwm_to_gssha
     - gsshapy.modeling
     - gsshapy.modeling.event
     - gsshapy.modeling.framework
