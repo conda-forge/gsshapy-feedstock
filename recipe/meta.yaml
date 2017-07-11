@@ -1,6 +1,6 @@
 {% set name = "gsshapy" %}
-{% set version = "2.3.4" %}
-{% set sha256 = "92d828cac2ce5561a3efa04d2da61e33b0ac0cfe7aa06a81d67fd52f709bbd47" %}
+{% set version = "2.3.5" %}
+{% set sha256 = "b25287e1a406cbacd36e2bb9c08573901798a3a62afa77424b3c4067d90ec226" %}
 
 package:
   name: {{ name|lower }}
