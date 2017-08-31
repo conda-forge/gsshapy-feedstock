@@ -24,8 +24,8 @@ requirements:
     - python
     - affine
     - appdirs
+    - gdal 2.1.*
     - geopandas
-    - libgdal 2.1.*
     - mapkit
     - pangaea
     - psycopg2
