@@ -25,6 +25,7 @@ requirements:
     - affine
     - appdirs
     - geopandas
+    - libgdal 2.1.*
     - mapkit
     - pangaea
     - psycopg2
