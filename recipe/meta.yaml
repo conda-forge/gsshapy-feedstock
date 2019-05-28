@@ -12,17 +12,19 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  noarch: python
   number: 0
-  script: python -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
-    - python=3*
+    - pip
+    - python
     - setuptools
   host:
     - pip
   run:
-    - python=3*
+    - python
     - affine
     - appdirs
     - gdal
