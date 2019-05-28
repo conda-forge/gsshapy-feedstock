@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
-  skip: True  # [py2k and py37]
+  skip: True  # [py2k or py37]
 
 requirements:
   build:
