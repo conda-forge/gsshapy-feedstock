@@ -14,19 +14,19 @@ source:
 build:
   number: 1
   noarch: python
-  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - pip
-    - python
+    - python>=3.6
     - setuptools
   host:
-    - python
+    - python>=3.6
     - pip
     - setuptools
   run:
-    - python
+    - python>=3.6
     - affine
     - appdirs
     - gdal
