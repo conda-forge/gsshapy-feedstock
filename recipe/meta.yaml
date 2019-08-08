@@ -29,7 +29,6 @@ requirements:
     - mapkit
     - pangaea
     - psycopg2
-    - pynio          # [not win and not py3k]
     - pyyaml
     - rapidpy
     - timezonefinder
