@@ -7,3 +7,4 @@ appveyor:
 min_py_ver: '36'
 provider:
   win: azure
+conda_forge_output_validation: true
