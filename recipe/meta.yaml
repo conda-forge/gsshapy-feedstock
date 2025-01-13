@@ -8,30 +8,26 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
-    - pip
-    - python>=3.6
-    - setuptools
   host:
-    - python>=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python>=3.6
+    - python >={{ python_min }}
     - affine
     - appdirs
     - gdal
     - geopandas
-    - mapkit>=1.2.6
+    - mapkit >=1.2.6
     - pangaea
     - psycopg2
     - pyyaml
@@ -41,6 +37,8 @@ requirements:
     - wrf-python
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - gsshapy
     - gsshapy.orm
