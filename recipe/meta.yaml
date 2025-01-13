@@ -17,21 +17,17 @@ build:
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
-    - pip
-    - python>=3.6
-    - setuptools
   host:
-    - python>=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python>=3.6
+    - python >={{ python_min }}
     - affine
     - appdirs
     - gdal
     - geopandas
-    - mapkit>=1.2.6
+    - mapkit >=1.2.6
     - pangaea
     - psycopg2
     - pyyaml
